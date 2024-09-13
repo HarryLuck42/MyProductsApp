@@ -233,7 +233,7 @@ class ProductsProvider extends BaseProvider {
       if (priceCtrl.text.isEmpty) {
         isValidated = false;
         _listValidate.add(ValidateInput.priceEmpty);
-      } else if (int.parse(priceCtrl.text) < 500) {
+      } else if (int.parse(priceCtrl.text.removeDot()) < 500) {
         isValidated = false;
         _listValidate.add(ValidateInput.priceMin);
       }
@@ -241,7 +241,7 @@ class ProductsProvider extends BaseProvider {
       if (weightCtrl.text.isEmpty) {
         isValidated = false;
         _listValidate.add(ValidateInput.weightEmpty);
-      } else if (int.parse(weightCtrl.text) < 1) {
+      } else if (int.parse(weightCtrl.text.removeDot()) < 1) {
         isValidated = false;
         _listValidate.add(ValidateInput.weightMin);
       }
@@ -249,7 +249,7 @@ class ProductsProvider extends BaseProvider {
       if (lengthCtrl.text.isEmpty) {
         isValidated = false;
         _listValidate.add(ValidateInput.lengthEmpty);
-      } else if (int.parse(lengthCtrl.text) < 1) {
+      } else if (int.parse(lengthCtrl.text.removeDot()) < 1) {
         isValidated = false;
         _listValidate.add(ValidateInput.lengthMin);
       }
@@ -257,7 +257,7 @@ class ProductsProvider extends BaseProvider {
       if (widthCtrl.text.isEmpty) {
         isValidated = false;
         _listValidate.add(ValidateInput.widthEmpty);
-      } else if (int.parse(widthCtrl.text) < 1) {
+      } else if (int.parse(widthCtrl.text.removeDot()) < 1) {
         isValidated = false;
         _listValidate.add(ValidateInput.widthMin);
       }
@@ -265,7 +265,7 @@ class ProductsProvider extends BaseProvider {
       if (heightCtrl.text.isEmpty) {
         isValidated = false;
         _listValidate.add(ValidateInput.heightEmpty);
-      } else if (int.parse(heightCtrl.text) < 1) {
+      } else if (int.parse(heightCtrl.text.removeDot()) < 1) {
         isValidated = false;
         _listValidate.add(ValidateInput.heightMin);
       }
@@ -284,12 +284,12 @@ class ProductsProvider extends BaseProvider {
             sku: sku,
             name: nameCtrl.text,
             description: descCtrl.text,
-            weight: int.parse(weightCtrl.text),
-            width: int.parse(widthCtrl.text),
-            height: int.parse(heightCtrl.text),
-            length: int.parse(lengthCtrl.text),
+            weight: int.parse(weightCtrl.text.removeDot()),
+            width: int.parse(widthCtrl.text.removeDot()),
+            height: int.parse(heightCtrl.text.removeDot()),
+            length: int.parse(lengthCtrl.text.removeDot()),
             image: imageCtrl.text,
-            price: int.parse(priceCtrl.text));
+            price: int.parse(priceCtrl.text.removeDot()));
         if (product == null) {
           createProduct(context, request, onSuccess, onError);
         } else {

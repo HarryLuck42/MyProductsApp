@@ -40,6 +40,10 @@ extension StringDefine on String{
   String convert(String format){
     return DateFormat(format).format(DateTime.parse(this));
   }
+
+  String removeDot(){
+    return replaceAll(".", "");
+  }
 }
 
 extension IntDefine on int{
