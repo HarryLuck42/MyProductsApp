@@ -99,9 +99,9 @@ class _AddEditProductDialogState extends State<AddEditProductDialog>
                   skuTemp = helper.generateSKU();
                 }
                 ref.submitProduct(context, widget.product, skuTemp, () {
-                  // Navigator.pop(context);
+                  Navigator.pop(context);
                 }, () {
-                  // Navigator.pop(context);
+                  Navigator.pop(context);
                 });
               },
               radius: 10,

@@ -99,6 +99,8 @@ class _ProductsScreenState extends State<ProductsScreen>
                           });
                         }
                       });
+                    }else{
+                      ref.resetProductList();
                     }
                   },
                   onPressedRightIcon: () {
